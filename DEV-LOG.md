@@ -32,4 +32,6 @@
         $ git config --global alias.co checkout
     -Learned "type" is not to be used as a column name in Rails. See: 
         https://mattconnolly.wordpress.com/2012/06/01/rails-beware-a-column-named-type/
-    
+    -In order to be able to send a user's bookmarks, I proceeded to format the rendered json in the show action (Users controller). 
+     But I got a NoMethodError (undefined method `respond_to' for Api::V1::UsersController#show Did you mean?  respond_to?): And turns ou that ActionController::API does not include the ActionController::MimeResponds module. Added include ActionController::MimeResponds to Application
+     Controller to solve the issue. (look into gem 'responders').

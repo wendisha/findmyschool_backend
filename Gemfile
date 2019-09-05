@@ -17,7 +17,7 @@ gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'fast_jsonapi'
-gem 'responders'
+# gem 'responders'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
