@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookmarks
   # findmyschool.com/api/v1/resource
   namespace :api do
     namespace :v1 do

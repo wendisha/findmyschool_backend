@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_005208) do
+ActiveRecord::Schema.define(version: 2019_09_05_010753) do
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.integer "district_id"
+    t.string "grade_range"
+    t.string "address"
+    t.string "website"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
