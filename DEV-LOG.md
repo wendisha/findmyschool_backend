@@ -16,7 +16,7 @@
     -Changed app name from School Search NY to Find My School.
     -Impt commits of the day:
         Add Scaffold generated files for School
-        Properly namespaced and added class inrehitance to Users and Schools
+        Properly namespaced and added class inrehitance to Users and Schools. Nested school resources.
 
 09/05/19:
     -Decided on app Rails API associations to be:   
