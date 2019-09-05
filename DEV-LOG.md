@@ -24,9 +24,12 @@
         School has_many Bookmarks
         User has_many Schools through Bookmarks
         School has_many Users through Bookmarks
+    -Changed working working copy of repo to the new name, and changed its remote name. See:
+        https://stackoverflow.com/questions/5751585/how-do-i-rename-a-repository-on-github
     -Scaffolded Bookmark.
     -Seeded some testing data.
     -Researched some git aliases, implemented:
         $ git config --global alias.co checkout
     -Learned "type" is not to be used as a column name in Rails. See: 
         https://mattconnolly.wordpress.com/2012/06/01/rails-beware-a-column-named-type/
+    
