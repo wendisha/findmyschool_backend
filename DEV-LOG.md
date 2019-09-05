@@ -26,3 +26,7 @@
         School has_many Users through Bookmarks
     -Scaffolded Bookmark.
     -Seeded some testing data.
+    -Researched some git aliases, implemented:
+        $ git config --global alias.co checkout
+    -Learned "type" is not to be used as a column name in Rails. See: 
+        https://mattconnolly.wordpress.com/2012/06/01/rails-beware-a-column-named-type/
