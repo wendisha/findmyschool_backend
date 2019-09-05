@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  grade_range: MyString
+  address: MyString
+  district_id: MyString
+  website: MyString
+  rating: MyString
+
+two:
+  name: MyString
+  type: 
+  grade_range: MyString
+  address: MyString
+  district_id: MyString
+  website: MyString
+  rating: MyString
