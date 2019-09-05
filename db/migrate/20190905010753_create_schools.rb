@@ -3,11 +3,11 @@ class CreateSchools < ActiveRecord::Migration[5.2]
     create_table :schools do |t|
       t.string :name
       t.string :type
+      t.integer :district_id
       t.string :grade_range
-      t.string :address
-      t.string :district_id
+      t.string :address 
       t.string :website
-      t.string :rating
+      t.integer :rating
 
       t.timestamps
     end
