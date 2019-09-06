@@ -38,3 +38,11 @@
     -But! After installing user serializer I re-formatted the user show action.
     -Created the React app, encountering some issues that was able to solve following the instructions here listed (second best answer):
         https://stackoverflow.com/questions/38751830/create-react-app-installation-error-command-not-found
+    -Impt commits of the day:
+        Added associations
+        Add fast_jsonapi gem (to create serializers), and created users serializer, and added has_many association for bookmarks
+        Add current_user and logged_in? methods
+
+09/06/19:
+    -Set up Redux
+    -Took out React's basic styling
