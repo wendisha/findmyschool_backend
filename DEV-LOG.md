@@ -35,3 +35,6 @@
     -In order to be able to send a user's bookmarks, I proceeded to format the rendered json in the show action (Users controller). 
      But I got a NoMethodError (undefined method `respond_to' for Api::V1::UsersController#show Did you mean?  respond_to?): And turns ou that ActionController::API does not include the ActionController::MimeResponds module. Added include ActionController::MimeResponds to Application
      Controller to solve the issue. (look into gem 'responders').
+    -But! After installing user serializer I re-formatted the user show action.
+    -Created the React app, encountering some issues that was able to solve following the instructions here listed (second best answer):
+        https://stackoverflow.com/questions/38751830/create-react-app-installation-error-command-not-found
