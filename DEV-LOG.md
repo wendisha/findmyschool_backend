@@ -46,3 +46,8 @@
 09/06/19:
     -Set up Redux
     -Took out React's basic styling
+    -Started working on adding the ability to login and persists sessions, retrieving the current user on mount if there is one.
+
+09/07/19:
+    -Finish adding the ability to login and persist sessions.
+    -
