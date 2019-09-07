@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/api/v1/login", to: "sessions#create"
+  post "/api/v1/login", to: "api/v1/sessions#create"
   # findmyschool.com/api/v1/resource
   namespace :api do
     namespace :v1 do
