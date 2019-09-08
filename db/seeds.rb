@@ -12,4 +12,8 @@
 
 # Bookmark.create(user_id: 1, school_id: 1)
 
-User.create(username: "luna", password: "password", name: "Luna")
+# User.create(username: "luna", password: "password", name: "Luna")
+School.create(name: "Test School", school_type: "Public", district_id: 26, grade_range: "Test", address: "Test address", website: "Test Website", rating_info: "some info!")
+
+Bookmark.create(user_id: 3, school_id: 1)
+Bookmark.create(user_id: 3, school_id: 2)
