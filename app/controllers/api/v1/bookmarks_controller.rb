@@ -3,9 +3,13 @@ class Api::V1::BookmarksController < ApplicationController
 
   # GET /bookmarks
   def index
-    @bookmarks = Bookmark.all
-
-    render json: @bookmarks
+    if logged_in?
+      @bookmarks = current_user.bookmarks
+      render json: @bookmarks
+    else
+      render json: {
+        error: "You must be logged in to see bookmarks"
+      }
   end
 
   # GET /bookmarks/1
