@@ -3,7 +3,7 @@ class Api::V1::BookmarksController < ApplicationController
 
   # GET /bookmarks
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = current_user.bookmarks
 
     render json: @bookmarks
   end
