@@ -5,11 +5,12 @@ class Api::V1::BookmarksController < ApplicationController
   def index
     if logged_in?
       @bookmarks = current_user.bookmarks
-      render json: @bookmarks
+      render json: BookmarkSerializer.new(@bookmarks)
     else
       render json: {
         error: "You must be logged in to see bookmarks"
       }
+    end
   end
 
   # GET /bookmarks/1
