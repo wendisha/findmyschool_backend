@@ -47,7 +47,26 @@
     -Set up Redux
     -Took out React's basic styling
     -Started working on adding the ability to login and persists sessions, retrieving the current user on mount if there is one.
+    -Impt commits of the day:
+        Create React app
+        Add redux, react-redux and redux-thunk to the list of dependecies
+        Create user reducers and actions 
+        Move store to its own file
+        Add login component
+        Add loginForm component, reducers and actions
+        Handle updating form
+        Set up sending requests to the backend
+        Whitelist cors to only fetch to localhost:3000, 3001 and 3002 domains
+        Create and namespace sessions controller
 
 09/07/19:
     -Finish adding the ability to login and persist sessions.
-    -
+    -Added ability to log out.
+    -Impt commits of the day:
+        Add Logout component
+        Create fetch request to logout
+        Add clearCurrentUser action
+        Add NavBar component and class
+        Create route and action for get_current_user
+        Set sessions and cookies
+        Add logout route and destroy action
