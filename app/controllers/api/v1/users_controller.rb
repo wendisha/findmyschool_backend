@@ -12,10 +12,9 @@ class Api::V1::UsersController < ApplicationController
   # GET /users/1
   def show
     # render :json => @user.to_json( :include => [:bookmarks] )
-    user_json = UserSerializer.new(@user).serialized_json
+    user_json = UserSerializer.new(@user, include: [:bookmarks]).serialized_json
     render json: user_json
   end
-
 
   # POST /users
   def create
