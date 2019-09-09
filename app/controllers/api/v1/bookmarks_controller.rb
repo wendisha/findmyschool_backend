@@ -15,7 +15,7 @@ class Api::V1::BookmarksController < ApplicationController
 
   # GET /bookmarks/1
   def show
-    render json: @bookmark
+    render json: BookmarkSerializer.new(@bookmark)
   end
 
   # POST /bookmarks
