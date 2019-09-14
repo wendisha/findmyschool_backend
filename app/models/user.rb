@@ -5,4 +5,5 @@ class User < ApplicationRecord
     has_many :schools, through: :bookmarks
 
     validates :name, :username, presence: true
+    validates :username, uniqueness: true
 end
