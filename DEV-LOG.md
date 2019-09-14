@@ -70,3 +70,6 @@
         Create route and action for get_current_user
         Set sessions and cookies
         Add logout route and destroy action
+
+09/09/19:
+    -
