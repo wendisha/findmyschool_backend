@@ -7,7 +7,6 @@ class Api::V1::UsersController < ApplicationController
 
     render json: UserSerializer.new(@users)
   end
-  
 
   # GET /users/1
   def show
@@ -49,6 +48,6 @@ class Api::V1::UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :password_digest)
+      params.require(:user).permit(:username, :password, :name)
     end
 end
