@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_210014) do
+ActiveRecord::Schema.define(version: 2019_09_20_211050) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.string "user_id"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_210014) do
   create_table "schools", force: :cascade do |t|
     t.string "name"
     t.string "city"
-    t.integer "district_id"
     t.string "state"
     t.string "address"
     t.string "website"
