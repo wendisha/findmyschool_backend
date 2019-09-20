@@ -23,7 +23,7 @@ class Api::V1::BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
 
     if @bookmark.save
-      render json: @bookmark, status: :created, location: @bookmark
+      render json: @bookmark, status: :created
     else
       render json: @bookmark.errors, status: :unprocessable_entity
     end

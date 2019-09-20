@@ -16,9 +16,10 @@ class Api::V1::SchoolsController < ApplicationController
   # POST /schools
   def create
     @school = School.new(school_params)
-
+    # byebug 
     if @school.save
-      render json: @school, status: :created, location: @school
+      
+      render json: @school, status: :created
     else
       render json: @school.errors, status: :unprocessable_entity
     end
