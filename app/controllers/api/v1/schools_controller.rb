@@ -18,11 +18,15 @@ class Api::V1::SchoolsController < ApplicationController
 #Check if school already exists (If yes, bookmark school and dont create school. If not, create school and bookmark it)
   def create
     @school = School.find_by(name: params[:name])
+    # byebug
     if @school 
-      @bookmark = Bookmark.find_by(school_id: @school.id)
-      if !@bookmark
-        @bookmark = Bookmark.new(user_id: current_user.id, school_id: @school.id)
-      end
+      # # params[:clinic_id]
+      # @bookmark = Bookmark.find_by(@school.id)
+      # if !@bookmark
+        params[:user_id] = current_user.id
+        params[:school_id] = @school.id
+        @bookmark = Bookmark.create(:user_id => params[:user_id], :school_id => params[:school_id])
+      # end
     else 
       @school = School.new(school_params)
       if @school.save
