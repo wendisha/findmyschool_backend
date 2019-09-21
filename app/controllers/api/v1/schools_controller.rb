@@ -18,7 +18,6 @@ class Api::V1::SchoolsController < ApplicationController
 #Check if school already exists (If yes, bookmark school and dont create school. If not, create school and bookmark it)
   def create
     @school = School.find_by(name: params[:name])
-    # byebug
     if @school 
       # # params[:clinic_id]
       # @bookmark = Bookmark.find_by(@school.id)
@@ -28,13 +27,16 @@ class Api::V1::SchoolsController < ApplicationController
         @bookmark = Bookmark.create(:user_id => params[:user_id], :school_id => params[:school_id])
       # end
     else 
-      @school = School.new(school_params)
+      @school = School.new(school_params)     
       if @school.save
+        params[:user_id] = current_user.id
+        params[:school_id] = @school.id
+        @bookmark = Bookmark.create(:user_id => params[:user_id], :school_id => params[:school_id])
         render json: @school, status: :created
       else
         render json: @school.errors, status: :unprocessable_entity
       end
-  end
+    end
   end
 
   # PATCH/PUT /schools/1
