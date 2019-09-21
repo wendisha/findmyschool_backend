@@ -21,7 +21,6 @@ class Api::V1::BookmarksController < ApplicationController
   # POST /bookmarks
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    byebug
     if @bookmark.save
       render json: @bookmark, status: :created
     else
