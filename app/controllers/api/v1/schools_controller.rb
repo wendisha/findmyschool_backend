@@ -19,12 +19,15 @@ class Api::V1::SchoolsController < ApplicationController
   def create
     @school = School.find_by(name: params[:name])
     if @school 
-      # # params[:clinic_id]
-      # @bookmark = Bookmark.find_by(@school.id)
+      params[:user_id] = current_user.id
+      params[:school_id] = @school.id
+      # @bookmark = Bookmark.find_by(params[:school_id])
       # if !@bookmark
-        params[:user_id] = current_user.id
-        params[:school_id] = @school.id
         @bookmark = Bookmark.create(:user_id => params[:user_id], :school_id => params[:school_id])
+      # else 
+      #   render json: {
+      #     error: "You have already bookmarked this school!"
+      #   }
       # end
     else 
       @school = School.new(school_params)     
