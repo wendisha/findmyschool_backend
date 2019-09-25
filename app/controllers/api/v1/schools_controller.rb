@@ -18,18 +18,19 @@ class Api::V1::SchoolsController < ApplicationController
 #Check if school already exists (If yes, bookmark school and dont create school. If not, create school and bookmark it)
   def create
     @school = School.find_by(name: params[:name])
-    if @school 
+    # school_id = 0
+    if @school
       params[:user_id] = current_user.id
       params[:school_id] = @school.id
-      # @bookmark = Bookmark.find_by(params[:school_id])
-      # if !@bookmark
+      @bookmark = Bookmark.find_by(school_id: params[:school_id])
+      if @bookmark
+        render json: {
+          error: "You have already bookmarked this school!"
+        }
+      else
         @bookmark = Bookmark.create(:user_id => params[:user_id], :school_id => params[:school_id])
-      # else 
-      #   render json: {
-      #     error: "You have already bookmarked this school!"
-      #   }
-      # end
-    else 
+      end
+    else
       @school = School.new(school_params)     
       if @school.save
         params[:user_id] = current_user.id
@@ -41,6 +42,40 @@ class Api::V1::SchoolsController < ApplicationController
       end
     end
   end
+
+
+  ########
+
+  # def create
+  #   @school = School.find_by(name: params[:name])
+  #   school_id = 0
+
+  #   # FIRST: FIND or CREATE School & assign school_id
+  #   if @school
+  #     school_id = @school.id
+  #   else
+  #     @school = School.new(school_params)  
+
+  #     if @school.save
+  #       school_id = @school.id
+  #     else
+  #       render json: @school.errors, status: :unprocessable_entity
+  #     end
+  #   end
+
+  #   # SECOND: Try to FIND Bookmark & CREATE if DOES NOT exit
+  #   @bookmark = Bookmark.find(school_id)
+  #   if @bookmark
+  #     render json: {
+  #       error: "You have already bookmarked this school!"
+  #     }
+  #   else
+  #     @bookmark = Bookmark.create(:user_id => current_user.id, :school_id => school_id)
+  #   end
+  # end
+
+
+  ########
 
   # PATCH/PUT /schools/1
   def update
